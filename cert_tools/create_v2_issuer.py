@@ -50,8 +50,8 @@ def generate_issuer_file(config):
 
 
 def get_config():
-    cwd = os.getcwd()
-    p = configargparse.getArgumentParser(default_config_files=[os.path.join(cwd, 'conf.ini')])
+    cwd = os.path.join(os.getcwd(),'cert-tools')
+    p = configargparse.getArgumentParser(default_config_files=[os.path.join(cwd, 'issuer_conf.ini')])
     p.add('-c', '--my-config', required=True, is_config_file=True, help='config file path')
     p.add_argument('--data_dir', type=str, help='where data files are located')
     p.add_argument('-k', '--issuer_public_key', type=str, required=True, help='The key(s) an issuer uses to sign Assertions. See https://openbadgespec.org/#Profile for more details')

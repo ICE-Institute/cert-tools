@@ -108,3 +108,5 @@ data/*
 
 .DS_Store
 *.conf.ini
+
+*.csv

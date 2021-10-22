@@ -125,7 +125,7 @@ def instantiate_batch(config):
 
 
 def get_config():
-    cwd = os.getcwd()
+    cwd = os.path.join(os.getcwd(),'cert-tools')
     p = configargparse.getArgumentParser(default_config_files=[os.path.join(cwd, 'conf.ini')])
     p.add('-c', '--my-config', required=False, is_config_file=True, help='config file path')
     p.add_argument('--data_dir', type=str, help='where data files are located')
