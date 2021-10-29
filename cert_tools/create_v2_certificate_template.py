@@ -151,8 +151,9 @@ def write_certificate_template(config):
 
 
 def get_config():
-    cwd = os.getcwd()
+    cwd = os.path.join(os.getcwd(),'cert-tools')
     config_file_path = os.path.join(cwd, 'conf.ini')
+    #print (config_file_path)
     p = configargparse.getArgumentParser(default_config_files=[config_file_path])
 
     p.add('-c', '--my-config', required=False, is_config_file=True, help='config file path')
@@ -191,6 +192,7 @@ def get_config():
 
 def main():
     conf = get_config()
+    #print (conf)
     write_certificate_template(conf)
     print('Created template!')
 
